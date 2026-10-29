@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Новости Казахстана — Информационный портал</title>
+<style>
+:root{--navy:#031b3d;--blue:#075ac7;--pale:#e8f2ff;--ink:#102746;--muted:#657a95}
+*{box-sizing:border-box}body{margin:0;background:#edf4fc;color:var(--ink);font:15px/1.45 Arial,Helvetica,sans-serif}
+header{background:linear-gradient(115deg,#031634,#064da4,#0878df);color:#fff;padding:22px max(22px,calc((100% - 1240px)/2));display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:14px}.logo{font-weight:900;font-size:29px;letter-spacing:-1px;background:#fff;color:#075ac7;padding:5px 9px;transform:skew(-7deg)}.brand h1{font-size:21px;margin:0}.brand p{margin:3px 0 0;color:#c9ddf4;font-size:12px;letter-spacing:.5px}
+.header-right{display:flex;align-items:center;gap:20px;font-size:13px;color:#d9eaff}
+nav{display:flex;gap:0;overflow:auto;background:#f8fbff;border-bottom:1px solid #d9e3ef;padding:0 max(12px,calc((100% - 1240px)/2));box-shadow:0 2px 8px #1027460a}
+nav a{white-space:nowrap;text-decoration:none;color:#18304f;padding:16px 14px;font-weight:700;border-bottom:3px solid transparent}nav a:hover{border-color:var(--blue);color:var(--blue)}
+main{max-width:1240px;margin:22px auto;padding:0 18px}.top-grid{display:grid;grid-template-columns:1.7fr 1fr;gap:18px}
+.hero{min-height:350px;border-radius:5px;overflow:hidden;display:flex;align-items:end;color:white;padding:26px;background:linear-gradient(0deg,#06182bed 0%,#06182b1a 75%),url('https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1300&q=85') center/cover}
+.tag{display:inline-block;background:var(--blue);padding:5px 9px;border-radius:2px;font-size:11px;font-weight:bold;text-transform:uppercase}.hero h2{font-size:clamp(24px,3vw,35px);line-height:1.13;margin:12px 0}.hero p{max-width:650px;margin:0 0 12px;color:#e6eff9}.date{font-size:12px;color:#b7cbe3}
+.side-list{display:grid;gap:12px}.side-story{display:grid;grid-template-columns:118px 1fr;gap:12px;padding-bottom:12px;border-bottom:1px solid #dce5ef}.side-story img{width:118px;height:86px;object-fit:cover;border-radius:4px}.category{font-size:11px;color:var(--blue);font-weight:800;text-transform:uppercase}.side-story h3{font-size:14px;line-height:1.3;margin:5px 0}
+.section-title{display:flex;align-items:center;gap:15px;margin:30px 0 14px;font-size:17px;color:#064da4;font-weight:800}.section-title:after{content:"";height:1px;background:#0b65d8;flex:1}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:#fff;border-top:3px solid #0b65d8;border-radius:4px;overflow:hidden;box-shadow:0 2px 9px #142d4b0b}.card img{width:100%;height:130px;object-fit:cover;display:block}.card-content{padding:11px}.card h3{font-size:15px;line-height:1.32;margin:5px 0 9px}.card .date{color:var(--muted)}
+.lower{display:grid;grid-template-columns:2fr 1fr;gap:18px}.video-box{background:#e4effb;padding:15px;border-radius:4px}.video-box img{width:100%;height:150px;object-fit:cover;border-radius:3px}.video-box h3{font-size:15px}
+#menuBtn{background:transparent;border:1px solid #ffffff70;color:white;padding:9px 12px;border-radius:4px;font-size:20px;cursor:pointer}
+.drawer{display:none;position:fixed;z-index:5;left:0;top:0;width:min(488px,88vw);height:100vh;overflow:auto;background:#fff;color:#20252d;padding:26px 30px;box-shadow:10px 0 40px #0003}.drawer.open{display:block}.drawer .close{color:#20252d}.drawer .logo{background:#075ac7;color:#fff}.menu-search{margin:28px 0}.drawer .menu-search input{background:#fff;color:#222;border:1px solid #ddd;border-radius:12px;padding:16px;font-size:17px}.menu-links{display:grid;gap:0}.menu-links>a,.menu-links summary{display:block;text-decoration:none;color:#252a30;font-size:20px;font-weight:700;padding:11px 0;cursor:pointer}.menu-links details>a{display:block;margin-left:18px;padding:8px 0;color:#45566a;text-decoration:none}.menu-links .live-link{color:#c51635}.socials{display:flex;gap:14px;margin:34px 0;font-size:25px;font-weight:bold}.socials a{color:#252a30;text-decoration:none}.theme-toggle{display:flex;align-items:center;justify-content:space-between;color:#777;margin:22px 0}.drawer .hint{color:#69798b}.drawer label{color:#526277}.drawer input,.drawer textarea{color:#102746;background:#fff;border-color:#cbd5e1}.drawer .admin-entry{border-top:1px solid #ddd;margin-top:20px;padding-top:8px}.info-section{max-width:1204px;margin:20px auto;padding:20px;background:white;border-radius:5px}.info-section h2{margin-top:0}.attendance-panel{text-align:center;background:linear-gradient(120deg,#06264b,#075ac7);color:#fff}.attendance-panel p{color:#d6e7fb}.visitor-count{font-size:clamp(34px,8vw,58px);font-weight:800;letter-spacing:1px;margin:12px 0}.attendance-panel .hint{color:#d6e7fb}.dark-mode{background:#101a29;color:#e6edf7}.dark-mode nav,.dark-mode .card,.dark-mode .article,.dark-mode .info-section{background:#17263a;color:#e6edf7}.dark-mode nav a,.dark-mode .card h3,.dark-mode .article h2{color:#e6edf7}.dark-mode .video-box{background:#1b304a}.dark-mode .section-title{color:#e6edf7}.drawer-top{display:flex;justify-content:space-between;align-items:center}.drawer h2{font-size:21px}.close{background:none;border:0;color:white;font-size:28px;cursor:pointer}.drawer label{display:block;margin:18px 0 6px;color:#c5d9f0;font-size:13px}.drawer input,.editor input,.editor textarea{width:100%;padding:12px;border:1px solid #48617f;border-radius:5px;background:#0c294a;color:white;font:inherit}.primary{background:#075ac7;border:0;color:#fff;padding:12px 16px;border-radius:5px;font-weight:bold;cursor:pointer;width:100%;margin-top:18px}.hint{color:#b9cbe0;font-size:13px}.error{color:#ffaaaa;font-size:13px;min-height:18px}.editor{display:none;margin-top:22px;padding-top:18px;border-top:1px solid #38506c}.editor textarea{min-height:115px;resize:vertical}.editor input,.editor textarea{background:#fff;color:#102746;border-color:#c9d6e5}.editor label{color:#d7e5f4}.editor .primary{margin-bottom:8px}.article{margin-top:22px;background:white;padding:18px;border-radius:5px;border:1px solid #e2e9f2}.article img{width:100%;max-height:360px;object-fit:cover;border-radius:4px}.article h2{font-size:26px;line-height:1.2}.article p{white-space:pre-wrap}.article-meta{color:var(--muted);font-size:12px}.delete{background:#a62727;color:white;border:0;border-radius:4px;padding:7px 10px;cursor:pointer}
+footer{margin-top:40px;background:#061d39;color:#c5d7eb;padding:26px;text-align:center;font-size:13px}
+@media(max-width:850px){.top-grid,.lower{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start}.header-right{display:none}.hero{min-height:310px}.side-list{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.brand h1{font-size:17px}.logo{font-size:23px}.cards{grid-template-columns:1fr 1fr;gap:10px}.card img{height:100px}.side-list{grid-template-columns:1fr}.side-story{grid-template-columns:105px 1fr}.side-story img{width:105px;height:78px}main{padding:0 12px}.hero{padding:18px;min-height:300px}.hero h2{font-size:25px}}
+</style></head>
+<body>
+<header><div class="brand"><div class="logo">PNK</div><div><h1>НОВОСТИ KZ</h1><p>НОВОСТИ КАЗАХСТАНА · БЫСТРО. ЯСНО. ПО ДЕЛУ.</p></div></div><div class="header-right"><span id="today"></span><span>● Казахстан</span></div><button id="menuBtn" aria-label="Открыть меню">☰ Меню</button></header>
+<nav><a href="#home">Главная</a><a href="#kazakhstan">Казахстан</a><a href="#politics">Политика</a><a href="#economy">Экономика</a><a href="#society">Общество</a><a href="#world">Мир</a><a href="#sport">Спорт</a><a href="#culture">Культура</a><a href="#articles">Новости автора</a><a href="#attendance">Посещаемость</a></nav>
+<main id="home">
+<div class="top-grid"><section class="hero"><div><span class="tag">Казахстан</span><h2>Главные события страны — в центре внимания</h2><p>Читайте новости, анализ и мнения о том, что происходит в Казахстане и мире.</p><div class="date">Информационный портал · Обновляется автором</div></div></section>
+<section class="side-list" id="sideList">
+<div class="side-story"><img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=400&q=80"><div><span class="category">Политика</span><h3>Решения и инициативы, влияющие на развитие страны</h3><span class="date">Редакционный обзор</span></div></div>
+<div class="side-story"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=400&q=80" onerror="this.src='https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=400&q=80'"><div><span class="category">Экономика</span><h3>Экономика Казахстана: главные темы дня</h3><span class="date">Обзор</span></div></div>
+<div class="side-story"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=400&q=80"><div><span class="category">Общество</span><h3>Люди, идеи и перемены в наших городах</h3><span class="date">Общество</span></div></div>
+</section></div>
+<div class="section-title" id="kazakhstan">ГЛАВНЫЕ НОВОСТИ</div>
+<section class="cards">
+<article class="card"><img src="https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=600&q=80"><div class="card-content"><span class="category">Казахстан</span><h3>Города Казахстана: развитие инфраструктуры и новые проекты</h3><span class="date">Обзор дня</span></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80"><div class="card-content"><span class="category">Экономика</span><h3>Энергетика и промышленность: что важно знать</h3><span class="date">Экономика</span></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&q=80"><div class="card-content"><span class="category">Общество</span><h3>Образование, работа и возможности для молодёжи</h3><span class="date">Общество</span></div></article>
+<article class="card"><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=600&q=80"><div class="card-content"><span class="category">Регионы</span><h3>Природа Казахстана и туристические направления</h3><span class="date">Путешествия</span></div></article>
+</section>
+<div class="lower"><section><div class="section-title" id="articles">АРХИВ И ПОСЛЕДНИЕ ПУБЛИКАЦИИ</div><p class="hint" style="color:#657a95">Примеры архивных материалов для оформления сайта. Это демонстрационные публикации, а не подтверждённые новости из прошлого.</p><div id="published"><p class="hint">Ваши опубликованные статьи появятся здесь после входа в меню администратора.</p></div></section><aside class="video-box"><div class="section-title">МЕДИА</div><img src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?auto=format&fit=crop&w=700&q=80" alt="Медиа"><h3>Новости и события — в одном месте</h3><p>Авторский информационный проект о Казахстане.</p></aside></div>
+</main>
+<section id="attendance" class="info-section attendance-panel">
+<h2>Посещаемость сайта</h2>
+<p>Счётчик посещений</p>
+<div id="visitorCount" class="visitor-count">16,847,637</div>
+<p id="visitorNote" class="hint">Демонстрационный счётчик посещений.</p>
+</section>
+<section id="projects" class="info-section"><h2>Телепроекты</h2><p>Интервью, специальные репортажи и авторские программы о людях и событиях Казахстана.</p></section><section id="schedule" class="info-section"><h2>Телепрограмма</h2><p>Расписание программ будет опубликовано редакцией. Следите за обновлениями портала.</p></section><section id="advertising" class="info-section"><h2>Реклама и сотрудничество</h2><p>По вопросам размещения материалов и партнёрства подготовьте описание предложения и контактные данные.</p></section><section id="about" class="info-section"><h2>О нас</h2><p>Новости KZ — независимый авторский информационный проект о событиях в Казахстане и мире. Материалы сайта не являются официальными заявлениями государственных органов.</p></section><section id="youtube" class="info-section"><h2>Видеоматериалы</h2><p>Видеорепортажи и интервью появятся в этом разделе по мере публикации.</p></section><section id="live" class="info-section"><h2>Прямой эфир</h2><p>Сейчас прямой эфир не подключён. Здесь можно разместить видеоплеер собственного канала.</p></section><footer>© <span id="year"></span> Новости KZ · Независимый авторский проект. Не является официальным государственным СМИ.</footer>
+<aside class="drawer" id="drawer"><div class="drawer-top"><div class="logo">KZ</div><button class="close" id="closeBtn" aria-label="Закрыть">×</button></div>
+<div class="menu-search"><input id="siteSearch" type="search" placeholder="⌕  Поиск по сайту" aria-label="Поиск по сайту"></div>
+<div class="menu-links"><a href="#home">Главная</a><details><summary>Новости</summary><a href="#kazakhstan">Казахстан</a><a href="#politics">Политика</a><a href="#economy">Экономика</a><a href="#society">Общество</a><a href="#world">Мир</a><a href="#sport">Спорт</a><a href="#culture">Культура</a></details><a href="#projects">Телепроекты</a><a href="#schedule">Телепрограмма</a><a href="#advertising">Реклама</a><a href="#about">О нас</a><a href="#youtube">YouTube</a><a href="#live" class="live-link">LIVE</a></div>
+<div class="socials"><a href="https://www.facebook.com/" target="_blank" rel="noopener">f</a><a href="https://x.com/" target="_blank" rel="noopener">𝕏</a><a href="https://www.instagram.com/" target="_blank" rel="noopener">◎</a><a href="https://www.youtube.com/" target="_blank" rel="noopener">▶</a><a href="https://t.me/" target="_blank" rel="noopener">➤</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener">♪</a></div>
+<label class="theme-toggle"><span>Тёмный режим</span><input id="darkToggle" type="checkbox"></label>
+<div class="admin-entry"><h2>Вход для автора</h2><p class="hint">Войдите, чтобы создавать и публиковать собственные статьи.</p></div><form id="loginForm"><label for="username">Логин</label><input id="username" autocomplete="username" required placeholder="Введите логин"><label for="password">Пароль</label><input id="password" type="password" autocomplete="current-password" required placeholder="Введите пароль"><button class="primary" type="submit">Войти</button><div class="error" id="loginError" role="alert"></div></form>
+<div class="editor" id="editor"><h3>Новая публикация</h3><form id="articleForm"><label for="title">Заголовок</label><input id="title" required maxlength="140" placeholder="Заголовок статьи"><label for="category">Рубрика</label><input id="category" required placeholder="Например, Казахстан"><label for="cover">Ссылка на фото (необязательно)</label><input id="cover" type="url" placeholder="https://..."><label for="body">Текст статьи</label><textarea id="body" required placeholder="Напишите текст статьи..."></textarea><button class="primary" type="submit">Опубликовать статью</button></form><button class="primary" id="logout" style="background:#334a64">Выйти из аккаунта</button><p class="hint">Демо-версия сохраняет публикации только в этом браузере.</p></div>
+</aside>
+<script>
+const $=id=>document.getElementById(id);
+$('today').textContent=new Date().toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});
+$('year').textContent=new Date().getFullYear();
+// Demo-only counter: one increment per browser storage profile.
+const VISITOR_TOTAL_KEY='newsKzDemoVisitorTotal';
+const VISITOR_SEEN_KEY='newsKzDemoVisitorSeen';
+let visitorTotal=Number(localStorage.getItem(VISITOR_TOTAL_KEY));
+if(!Number.isFinite(visitorTotal)||visitorTotal<16847637) visitorTotal=16847637;
+if(!localStorage.getItem(VISITOR_SEEN_KEY)){
+  visitorTotal+=1;
+  localStorage.setItem(VISITOR_SEEN_KEY,'1');
+  localStorage.setItem(VISITOR_TOTAL_KEY,String(visitorTotal));
+}else if(!localStorage.getItem(VISITOR_TOTAL_KEY)){
+  localStorage.setItem(VISITOR_TOTAL_KEY,String(visitorTotal));
+}
+$('visitorCount').textContent=visitorTotal.toLocaleString('en-US');
+$('visitorNote').textContent='Демо-счётчик: новое посещение в этом браузере учитывается один раз. Для общего счётчика всех посетителей нужен сервер.';
+$('menuBtn').onclick=()=>$('drawer').classList.add('open');
+$('closeBtn').onclick=()=>$('drawer').classList.remove('open');
+document.querySelectorAll('.menu-links a').forEach(a=>a.addEventListener('click',()=> $('drawer').classList.remove('open')));
+$('darkToggle').onchange=()=>document.body.classList.toggle('dark-mode',$('darkToggle').checked);
+$('siteSearch').addEventListener('input',()=>{const q=$('siteSearch').value.toLowerCase();document.querySelectorAll('.card').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(q)?'':'none');document.querySelectorAll('.side-story').forEach(c=>c.style.display=c.innerText.toLowerCase().includes(q)?'':'none')});
+const KEY='panicNewsArticlesDemo';
+let isAdmin=false;
+function getArticles(){
+  try{
+    let saved=JSON.parse(localStorage.getItem(KEY)||'null');
+    if(!Array.isArray(saved)){
+      saved=[
+        {title:'Как менялись города Казахстана: развитие инфраструктуры и общественных пространств',category:'Казахстан',cover:'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=900&q=80',body:'Обзорная статья о городской среде, общественном транспорте и благоустройстве. При подготовке публикаций сверяйте даты, цифры и цитаты с первоисточниками.',date:'18 ноября 2021 г. · Архивный пример'},
+        {title:'Цифровые сервисы и повседневная жизнь: что изменилось за последние годы',category:'Технологии',cover:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80',body:'Разбираемся, как цифровые инструменты помогают людям получать услуги и информацию. Материал подготовлен как демонстрационный пример оформления архива.',date:'7 июня 2022 г. · Архивный пример'},
+        {title:'Малый бизнес в регионах: идеи, возможности и трудности предпринимателей',category:'Экономика',cover:'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80',body:'Обзорная тема о местном предпринимательстве, доступе к финансированию и развитии услуг. Перед публикацией реальных новостей добавляйте проверенные данные и комментарии.',date:'22 февраля 2023 г. · Архивный пример'},
+        {title:'Молодёжь и образование: навыки, которые становятся особенно востребованными',category:'Общество',cover:'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80',body:'Материал о выборе профессии, обучении в течение жизни и новых образовательных форматах. Это демонстрационный текст, а не сообщение о конкретном событии.',date:'14 сентября 2023 г. · Архивный пример'},
+        {title:'Туризм внутри страны: природные маршруты и культурное наследие Казахстана',category:'Культура',cover:'https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80',body:'Путеводный обзор о природных ландшафтах, исторических местах и ответственном туризме. Проверяйте условия посещения и актуальные рекомендации перед поездкой.',date:'3 мая 2024 г. · Архивный пример'},
+        {title:'Городская среда и экология: почему важны зелёные зоны',category:'Общество',cover:'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=80',body:'Объясняем, как парки, деревья и общественные пространства влияют на комфорт жителей. Для публикации фактических утверждений используйте исследования и официальные источники.',date:'19 января 2025 г. · Архивный пример'}
+      ];
+      saved.forEach(a=>{});
+      localStorage.setItem(KEY,JSON.stringify(saved));
+    }
+    return saved;
+  }catch(e){return []}
+}
+function render(){const items=getArticles();$('published').innerHTML='';if(!items.length){$('published').innerHTML='<p class="hint">Пока нет опубликованных статей. Войдите через меню ☰, чтобы добавить первую.</p>';return}
+items.slice().reverse().forEach((a,idx)=>{const article=document.createElement('article');article.className='article';const cat=document.createElement('span');cat.className='category';cat.textContent=a.category;article.append(cat);const h=document.createElement('h2');h.textContent=a.title;article.append(h);const meta=document.createElement('div');meta.className='article-meta';meta.textContent=a.date;article.append(meta);if(a.cover){const im=document.createElement('img');im.src=a.cover;im.alt='Фото к статье';im.onerror=()=>im.remove();article.append(im)}const p=document.createElement('p');p.textContent=a.body;article.append(p);if(isAdmin){const del=document.createElement('button');del.className='delete';del.textContent='Удалить статью';del.onclick=()=>{if(confirm('Удалить эту статью?')){const all=getArticles();all.splice(items.length-1-idx,1);localStorage.setItem(KEY,JSON.stringify(all));render()}};article.append(del)}$('published').append(article)})}
+$('loginForm').onsubmit=e=>{e.preventDefault();if($('username').value==='PanicAttack'&&$('password').value==='PanicAttackAndGod'){isAdmin=true;$('loginError').textContent='';$('loginForm').style.display='none';$('editor').style.display='block';render()}else{$('loginError').textContent='Неверный логин или пароль.'}};
+$('articleForm').onsubmit=e=>{e.preventDefault();if(!isAdmin)return;const all=getArticles();all.push({title:$('title').value.trim(),category:$('category').value.trim(),cover:$('cover').value.trim(),body:$('body').value.trim(),date:new Date().toLocaleString('ru-RU')});localStorage.setItem(KEY,JSON.stringify(all));$('articleForm').reset();render();alert('Статья опубликована на этой демо-странице.')};
+$('logout').onclick=()=>{isAdmin=false;$('editor').style.display='none';$('loginForm').style.display='block';$('password').value='';render()};render();
+</script></body></html>
